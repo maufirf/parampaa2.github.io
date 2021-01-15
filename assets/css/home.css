@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+#section-headintro {
+    background: plum;
+    background: linear-gradient(70deg, plum 0%, #ffc0ff 100%)
+}
+
+#maufirflogo {
+    width: 80%;
+    margin: 10%;
+}
+
+.headintro-container {
+    height: 250px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.headintro-logocirc {
+    height: 175px;
+    width: 175px;
+    border-radius: 125px;
+    background-color: white;
+    display: flex;
+    align-content: center;
+}
+
+.headintro-maufirftitle {
+    font-weight: 800;
+    color: white;
+    font-size: 75px;
+    margin-left: 25px;
+}
+
+.headintro-changingtext-container {
+    color: white;
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.headintro-changingtext {
+    font-weight: 600;
+}
+
+.headintro-changingtext span::before {
+    position: relative;
+    content: "parampaa2";
+
+    animation-name: changingtext;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes changingtext {
+    0% {
+        opacity: 0;
+        left: -15px;
+    }
+
+    10% {
+        opacity: 1;
+        left: 0px;
+    }
+
+    40% {
+        opacity: 1;
+        left: 0px;
+    }
+
+    50% {
+        opacity: 0;
+        left: -15px;
+    }
+
+    60% {
+        opacity: 1;
+        left: 0px;
+    }
+
+    90% {
+        opacity: 1;
+        left: 0px;
+    }
+
+    100% {
+        opacity: 0;
+        left: -15px;
+        content: "bottlemin"
+    }
+}
