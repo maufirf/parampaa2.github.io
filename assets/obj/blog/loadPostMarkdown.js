@@ -20,6 +20,7 @@
 const body = document.children[0].children[1];
 
 const fileName = location.search.split('post=')[1]
+const notFoundPath = '../assets/obj/blog/blogPostNotFound.js';
 const filePath = `../assets/obj/blog/mds/${fileName}.js`;
 const newScript = document.createElement('script');
 newScript.type = 'text/javascript';

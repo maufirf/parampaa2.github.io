@@ -31,8 +31,10 @@ Also, there's some environment variable you have to set, or you can put these to
 After everything is set up, you'll just need to run the bot to post **once**, simultaneously to both accounts by simply running the \`bot.py\`.
 
 \#\# Known bugs
+
 - The image is sometimes at a (quote-unquote) _4kUHD_. The image baked always follow the topmost bottle component size as the anchor. If the topmost component is small, then there is a probability where even the rest of the component is having a high resolution quality would still be rendered pixelated due to the anchor's small size.
 - On Facebook, if your main account gets zucced in any sense that forces you to change the password, all of your tokens will expire and you have to renew it
 
 \#\# Acknowledgement
+
 Thank you very much for the support during the first launch. Special shoutout to [Semolini](https://github.com/Boidushya) for tutoring me in the [Bot Appreciation Society Discord server](https://discord.gg/kk6khdj). To all of [Bot Appreciation Society](https://www.facebook.com/groups/botappreciationsociety/) folks who have reacc'd my posts and gave me ideas about what to do. Also to [Michael Reeves](https://www.youtube.com/channel/UCtHaxi4GTYDpJgMSGy7AeSw) that encouraged me to make Twitter bots by his [video making a bot to order 100 random things from Amazon](https://www.youtube.com/watch?v=hBP-NzOadL0&t=634s).`
