@@ -1,6 +1,7 @@
 var csidx = 0;
 const interval = 5000;
 var slides;
+var dots;
 
 function setSlide(n) {
     csidx = n;
@@ -8,12 +9,18 @@ function setSlide(n) {
     if (n < 0) {csidx = slides.length-1;}
     for (var i=0;i<slides.length;i++) {
         slides[i].style.display = "none"
+        dots[i].className = dots[i].className.replace(' carousel-dot-active', '');
     }
     slides[csidx].style.display = "block";
+    dots[csidx].className += ' carousel-dot-active';
 }
 
 function nextSlide() {
     setSlide(csidx+1);
+}
+
+function prevSlide() {
+    setSlide(csidx-1);
 }
 
 function autoSlides() {
@@ -25,7 +32,7 @@ function createSlide(imgUrl, title, subtitle, hyperlink) {
     const slide = document.createElement('div');
     slide.className = "slide transition";
     if (hyperlink) {
-        slide.onclick = function () {window.open(hyperlink);}
+        slide.onclick = function () {window.open(hyperlink);};
     }
     if (imgUrl) {
         slideImg = document.createElement('img');
@@ -50,21 +57,35 @@ function createSlide(imgUrl, title, subtitle, hyperlink) {
     return slide;
 }
 
+var createClickHandler = function(arg) {
+    return function() { setSlide(arg); };
+}
+
 function generateSlidesFromManifest() {
-    const parent = document.getElementById('cs');
-    var child; var sd;
+    const slideParent = document.getElementById('cs');
+    const dotsParent = document.getElementById('cd');
+    var slideChild; var dotsChild; var sd;
     for (var i=0; i<slidesData.length; i++) {
         sd = slidesData[i];
-        child = createSlide(sd.imgUrl, sd.title, sd.subtitle, sd.hyperlink);
-        parent.appendChild(child);
+        slideChild = createSlide(sd.imgUrl, sd.title, sd.subtitle, sd.hyperlink);
+        slideParent.appendChild(slideChild);
+        dotsChild = document.createElement('div');
+        dotsChild.className = 'carousel-dot';
+        dotsChild.onclick = createClickHandler(i);
+        dotsParent.appendChild(dotsChild);
     }
 }
 
 function initSlides() {
     generateSlidesFromManifest();
     slides = document.getElementsByClassName('slide');
+    dots = document.getElementsByClassName('carousel-dot');
     slides[0].style.display = "block";
+    dots[0].className += ' carousel-dot-active';
     setTimeout(autoSlides, interval);
+
+    document.getElementById('slideLeft').onclick = prevSlide;
+    document.getElementById('slideRight').onclick = nextSlide;
 }
 
 initSlides();
