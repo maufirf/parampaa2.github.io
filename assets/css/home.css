@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
+html {
+    --headintro-container-height: 250px;
+    --viewport-height: calc(100vh);
+    --carousel-disposition: calc(var(--viewport-height) - var(--headintro-container-height) - 50px);
+
+}
+
 #section-headintro {
     background: plum;
     background: linear-gradient(70deg, plum 0%, #ffc0ff 100%)
@@ -11,7 +18,7 @@
 }
 
 .headintro-container {
-    height: 250px;
+    height: var(--headintro-container-height);
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 50px;
@@ -55,7 +62,7 @@
     animation-name: changingtext;
     animation-duration: 10s;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
 }
 
 @keyframes changingtext {
@@ -94,4 +101,25 @@
         left: -15px;
         content: "bottlemin"
     }
+}
+
+#section-homecarousel {
+    background-color: sandybrown;
+    height: var(--carousel-disposition);
+}
+
+.carousel-slide {
+    height: var(--carousel-disposition);
+}
+
+.carousel-overlay {
+    height: var(--carousel-disposition);
+    position: relative;
+    bottom: var(--carousel-disposition);
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: none;
 }
