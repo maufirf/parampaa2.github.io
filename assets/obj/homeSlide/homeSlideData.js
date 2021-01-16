@@ -12,9 +12,9 @@ slidesData = [
         "hyperlink": "https:\//whoamisubbedtoweb.herokuapp.com"
     },
     {
-        "imgUrl": "https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg",
-        "title": "Linus from LinusTechTips",
-        "subtitle": "and why he almost retired",
-        "hyperlink": "https:\//www.youtube.com/user/LinusTechTips"
+        "imgUrl": "./assets/obj/homeSlide/img/cvtiltshift.png",
+        "title": "Curriculum Vitae",
+        "subtitle": "Obtain a PDF copy of my curriculum vitae",
+        "hyperlink": "https:\//www.linkedin.com/in/maufirf"
     }
 ]
